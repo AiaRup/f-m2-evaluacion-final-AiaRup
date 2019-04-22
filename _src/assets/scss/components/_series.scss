@@ -1,3 +1,6 @@
+.series__favorities {
+  @include listDefault;
+}
 .show__image-fake {
   height: 0;
   width: 0;

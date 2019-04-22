@@ -15,6 +15,10 @@ function paintFavorities(listShows) {
     fakeImage.setAttribute('src', image);
     fakeImage.classList.add('favorite__image-fake');
     imageShow.setAttribute('style', `background-image:url('${image}')`);
+
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('favorite__title-container');
+
     const nameShow = document.createElement('h4');
     nameShow.classList.add('favorite__title');
     const showTitle = document.createTextNode(name);
@@ -29,9 +33,11 @@ function paintFavorities(listShows) {
       deleteFavorite(id);
     });
 
+    titleContainer.appendChild(nameShow);
+    titleContainer.appendChild(deleteIcon);
+
     showContainer.appendChild(imageShow);
-    showContainer.appendChild(nameShow);
-    showContainer.appendChild(deleteIcon);
+    showContainer.appendChild(titleContainer);
     favoritiesList.appendChild(showContainer);
   }
 }
