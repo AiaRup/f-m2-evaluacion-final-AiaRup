@@ -50,31 +50,41 @@ const checkImage = img => {
 };
 
 // function to add or remove show's id from array
-const changeSeriesArray = id => {
-  if (favoriteSeries.includes(id)) {
-    favoriteSeries.splice(favoriteSeries.indexOf(id), 1);
+const changeSeriesArray = (show, id) => {
+  const filteredArray = favoriteSeries.filter(show => show.id === parseInt(id));
+
+  if (filteredArray.length) {
+    favoriteSeries.splice(favoriteSeries.indexOf(filteredArray), 1);
   } else {
-    favoriteSeries.push(id);
+    favoriteSeries.push(show);
   }
   saveStorageData(favoriteSeries);
-
-  console.log('array', favoriteSeries);
 };
 
 // function for the show event listener
-const showOnClick = event => {
+const showOnClick = (event, show) => {
   const { currentTarget: listItem } = event;
   listItem.classList.toggle('favorite');
-  const showId = listItem.dataset.id;
-  changeSeriesArray(showId);
+  // create show object
+  const clickedId = listItem.dataset.id;
+  console.log('id clicked', clickedId);
+
+  changeSeriesArray(show, clickedId);
+};
+
+// function to create show object
+const showObject = (name, image, id) => {
+  return {
+    name,
+    image,
+    id,
+  };
 };
 
 // function to paint shows on the page
 const showSeries = ({ show }) => {
-  console.log(show);
-
+  // console.log(show);
   let { image, name, id } = show;
-
   // check if image exists
   image = checkImage(image);
 
@@ -98,7 +108,11 @@ const showSeries = ({ show }) => {
   showContainer.appendChild(nameShow);
   showContainer.appendChild(imageShow);
 
-  showContainer.addEventListener('click', showOnClick);
+  // create shoe object
+  const showObj = showObject(name, image, id);
+  showContainer.addEventListener('click', e => {
+    showOnClick(e, showObj);
+  });
 
   seriesList.appendChild(showContainer);
 };
@@ -111,7 +125,7 @@ const searchSeries = url => {
     fetch(`${url}${userValue.text}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
         for (const show of data) {
           showSeries(show);
         }
@@ -136,6 +150,7 @@ const deleteFavorite = show => {
 
 // function to take favorites as the page loads
 const loadFavorites = () => {
+  favoriteSeries = [];
   const favorites = getStorageData('favoriteShows');
   if (favorites) {
     favoriteSeries = favorites;
