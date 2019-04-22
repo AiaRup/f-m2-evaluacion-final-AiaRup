@@ -128,7 +128,9 @@ const paintFavorities = listShows => {
 // function to take favorites as the page loads
 const loadFavorites = () => {
   const favorites = getStorageData('favoriteShows');
-  paintFavorities(favorites);
+  if (favorites) {
+    paintFavorities(favorites);
+  }
 };
 
 // Event listeners
