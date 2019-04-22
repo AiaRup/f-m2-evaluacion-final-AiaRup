@@ -6,19 +6,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"
         />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Document</title>
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <title>Buscador de series</title>
+        <link rel="stylesheet" href="assets/css/main.css"
+        />
     </head>
     
     <body>
         <div class="page">
-            <div class="form">
-                <label for="search" class="form__label">Buscador de series</label>
-                <input type="text" id="search" class="form__input"
-                />
-                <button type="button" class="form__button">buscar</button>
-            </div>
-            <ol class="series"></ol>
+            <header class="page__header">
+                 <h1 class="header__title">Buscador de series</h1>
+
+            </header>
+            <main class="page__main">
+                <div class="main__left-panel">
+                    <div class="main__form">
+                        <label for="search" class="form__label">Buscador de series</label>
+                        <input type="text" id="search" class="form__input"
+                        />
+                        <button type="button" class="form__button">buscar</button>
+                    </div>
+                    <ul class="series__favorities">
+                        </ol>
+                </div>
+                <div class="main__right-panel">
+                    <ol class="series"></ol>
+                </div>
+            </main>
         </div>
         <script type="text/javascript" src="assets/js/main.js"></script>
     </body>
