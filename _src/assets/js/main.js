@@ -9,7 +9,7 @@ const favoritiesList = document.querySelector('.series__favorities');
 // Variables to work with
 const defaultImage =
   'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
-const favoriteSeries = [];
+let favoriteSeries = [];
 const apiUrl = 'http://api.tvmaze.com/search/shows?q=';
 
 // Functions
@@ -129,6 +129,7 @@ const paintFavorities = listShows => {
 const loadFavorites = () => {
   const favorites = getStorageData('favoriteShows');
   if (favorites) {
+    favoriteSeries = favorites;
     paintFavorities(favorites);
   }
 };
