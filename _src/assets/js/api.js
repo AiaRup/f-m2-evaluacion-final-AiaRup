@@ -38,8 +38,6 @@ const showSeries = ({ show }) => {
 
   // check if the show is already on the favorites list
   const indexOfShow = favoriteSeries.findIndex(item => item.id === id);
-  console.log('index of show', indexOfShow);
-  console.log('id', id);
 
   if (indexOfShow !== -1) {
     showContainer.classList.add('favorite');
@@ -67,6 +65,10 @@ const showSeries = ({ show }) => {
     showOnClick(event, showObj);
   });
 
+  // add each object to the results array
+  seriesResults.push(showObj);
+  console.log('results', seriesResults);
+
   seriesList.appendChild(showContainer);
 };
 
@@ -78,7 +80,7 @@ function searchSeries(url) {
     fetch(`${url}${userValue.text}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        seriesResults = [];
         seriesList.innerHTML = '';
         for (const show of data) {
           showSeries(show);

@@ -9,6 +9,7 @@ const errorContainer = document.querySelector('.error');
 
 // Variables to work with
 let favoriteSeries = [];
+let seriesResults = [];
 
 // Functions
 
