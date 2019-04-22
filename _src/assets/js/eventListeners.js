@@ -15,7 +15,6 @@ function deleteFavorite(showId) {
   );
   console.log('index', indexOfShow);
   favoriteSeries.splice(indexOfShow, 1);
-
   // delete from page
   paintFavorities(favoriteSeries);
 
@@ -23,3 +22,11 @@ function deleteFavorite(showId) {
   removeStorageData('favoriteShows');
   saveStorageData(favoriteSeries);
 }
+
+const fetchOnEnter = event => {
+  if (event.keyCode === 13) {
+    searchSeries(apiUrl);
+  }
+};
+
+window.addEventListener('keyup', fetchOnEnter);

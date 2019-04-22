@@ -61,7 +61,7 @@ const showSeries = ({ show }) => {
 };
 
 // function to fatch series from the api
-const searchSeries = url => {
+function searchSeries(url) {
   const userValue = takeUserInput();
   // if user entered a search value search the api
   if (userValue.status) {
@@ -76,7 +76,7 @@ const searchSeries = url => {
       })
       .catch(error => console.log('error', error));
   }
-};
+}
 
 searchButton.addEventListener('click', () => {
   searchSeries(apiUrl);
