@@ -1,6 +1,29 @@
-.series__favorities {
+.series {
   @include listDefault;
+  padding: 10px 50px;
+  margin: 0 auto;
+  @media all and (min-width: 768px) {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: auto;
+    justify-items: center;
+  }
+  @media all and (min-width: 1450px) {
+    grid-template-columns: repeat(4, 250px);
+  }
 }
+
+.show {
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
 .show__image-fake {
   height: 0;
   width: 0;
@@ -11,4 +34,5 @@
   width: 200px;
   background-repeat: no-repeat;
   background-size: contain;
+  // margin: 0 auto;
 }

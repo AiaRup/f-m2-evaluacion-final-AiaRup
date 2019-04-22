@@ -1,6 +1,11 @@
-.show__favorite {
+// .show__favorite {
+//   @include listDefault;
+// }
+
+.series__favorities {
   @include listDefault;
 }
+
 .favorite {
   color: white;
   background-color: brown;

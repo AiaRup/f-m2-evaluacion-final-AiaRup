@@ -1,0 +1,12 @@
+.main__subtitle {
+  @media all and (max-width: 768px) {
+    margin-top: 30px;
+  }
+}
+
+.page__main {
+  @media all and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 300px auto;
+  }
+}
