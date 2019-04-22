@@ -7,29 +7,41 @@
         />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Buscador de series</title>
-        <link rel="stylesheet" href="assets/css/main.css"
-        />
+        <link rel="icon" href="tv-icon.png" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css?family=Courgette|Montserrat"
+        rel="stylesheet" />
+        <link rel="stylesheet" href="assets/css/main.css" />
     </head>
     
     <body>
         <div class="page">
             <header class="page__header">
-                 <h1 class="header__title">Buscador de series</h1>
+                 <h1 class="header__title">
+    Buscador de series<i class="fas fa-film tv-icon"></i>
+  </h1>
 
             </header>
             <main class="page__main">
                 <div class="main__left-panel">
                     <div class="main__form">
-                        <label for="search" class="form__label">Buscador de series</label>
-                        <input type="text" id="search" class="form__input"
-                        />
-                        <button type="button" class="form__button">buscar</button>
-                        <div class="error hidden">* You need to enter a value to serach</div>
+                        <div class="form__container">
+                            <label for="search" class="form__label">Buscador de series</label>
+                            <input type="text" id="search" class="form__input"
+                            />
+                            <button type="button" class="form__button">buscar</button>
+                        </div>
+                        <div class="error hidden">* You need to enter a value to search</div>
                     </div>
-                    <ul class="series__favorities">
-                        </ol>
+                     <h2 class="main__subtitle">Mis series favoritas</h2>
+
+                    <ol class="series__favorities"></ol>
                 </div>
                 <div class="main__right-panel">
+                     <h2 class="main__subtitle">Mi búsqueda</h2>
+
                     <ol class="series"></ol>
                 </div>
             </main>
