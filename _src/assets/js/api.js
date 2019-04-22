@@ -73,7 +73,8 @@ const searchSeries = url => {
         for (const show of data) {
           showSeries(show);
         }
-      });
+      })
+      .catch(error => console.log('error', error));
   }
 };
 
