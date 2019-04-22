@@ -4,6 +4,7 @@
 const searchButton = document.querySelector('.form__button');
 const searchInput = document.querySelector('.form__input');
 const seriesList = document.querySelector('.series');
+const favoritiesList = document.querySelector('.series__favorities');
 
 // Variables to work with
 const defaultImage =
@@ -28,6 +29,21 @@ const takeUserInput = () => {
   return value;
 };
 
+// function to save in local storage
+const saveStorageData = array => {
+  localStorage.setItem('favoriteShows', JSON.stringify(array));
+};
+
+// function to take data from local storage
+const getStorageData = text => {
+  return JSON.parse(localStorage.getItem(text));
+};
+
+// function to take data from local storage
+const removeStorageData = () => {
+  localStorage.removeItem('favoriteShows');
+};
+
 // function to check if show's image is available
 const checkImage = img => {
   return img ? img.medium : defaultImage;
@@ -40,6 +56,8 @@ const changeSeriesArray = id => {
   } else {
     favoriteSeries.push(id);
   }
+  saveStorageData(favoriteSeries);
+
   console.log('array', favoriteSeries);
 };
 
@@ -102,7 +120,20 @@ const searchSeries = url => {
   }
 };
 
+// function to paint favorities on page
+const paintFavorities = listShows => {
+  console.log('favorities', listShows);
+};
+
+// function to take favorites as the page loads
+const loadFavorites = () => {
+  const favorites = getStorageData('favoriteShows');
+  paintFavorities(favorites);
+};
+
 // Event listeners
 searchButton.addEventListener('click', () => {
   searchSeries(apiUrl);
 });
+
+loadFavorites();
