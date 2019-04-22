@@ -59,6 +59,7 @@ const changeSeriesArray = (show, id) => {
     favoriteSeries.push(show);
   }
   saveStorageData(favoriteSeries);
+  paintFavorities(favoriteSeries);
 };
 
 // function for the show event listener
@@ -67,8 +68,6 @@ const showOnClick = (event, show) => {
   listItem.classList.toggle('favorite');
   // create show object
   const clickedId = listItem.dataset.id;
-  console.log('id clicked', clickedId);
-
   changeSeriesArray(show, clickedId);
 };
 
@@ -135,7 +134,26 @@ const searchSeries = url => {
 
 // function to paint favorities on page
 const paintFavorities = listShows => {
-  console.log('favorities', listShows);
+  for (const show of listShows) {
+    const { id, image, name } = show;
+    const showContainer = document.createElement('li');
+    showContainer.classList.add('show__favorite');
+    showContainer.setAttribute('data-id', id);
+    const imageShow = document.createElement('div');
+    const fakeImage = document.createElement('img');
+    imageShow.classList.add('favorite__image');
+    fakeImage.setAttribute('alt', name);
+    fakeImage.setAttribute('src', image);
+    fakeImage.classList.add('favorite__image-fake');
+    imageShow.setAttribute('style', `background-image:url('${image}')`);
+    const nameShow = document.createElement('h2');
+    nameShow.classList.add('favorite__title');
+    const showTitle = document.createTextNode(name);
+    nameShow.appendChild(showTitle);
+    showContainer.appendChild(nameShow);
+    showContainer.appendChild(imageShow);
+    favoritiesList.appendChild(showContainer);
+  }
 };
 
 //function for the delete event of favorite
