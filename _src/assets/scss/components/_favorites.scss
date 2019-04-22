@@ -6,9 +6,9 @@
   @include listDefault;
 }
 
-.favorite {
-  color: white;
-  background-color: brown;
+.favorite.show {
+  color: $color-white;
+  background-color: $color-pink;
 }
 
 .favorite__image {
@@ -22,7 +22,7 @@
   cursor: pointer;
   margin-left: 10px;
   &:hover {
-    color: $color-red;
+    color: $color-pink;
   }
 }
 
@@ -32,6 +32,10 @@
 
 .show__favorite {
   display: grid;
-  grid-template-columns: 100px auto;
+  grid-template-columns: 100px minmax(100px, 250px);
   grid-gap: 10px;
+}
+
+.favorite__title {
+  color: $color-pink;
 }

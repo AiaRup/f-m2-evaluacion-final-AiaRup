@@ -1,15 +1,18 @@
 .series {
   @include listDefault;
-  padding: 10px 50px;
   margin: 0 auto;
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 740px) {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(3, 250px);
+    grid-template-columns: repeat(2, 250px);
     grid-template-rows: auto;
+    padding: 10px 50px;
+  }
+  @media all and (min-width: 1250px) {
+    grid-template-columns: repeat(3, 250px);
     justify-items: center;
   }
-  @media all and (min-width: 1450px) {
+  @media all and (min-width: 1520px) {
     grid-template-columns: repeat(4, 250px);
   }
 }
@@ -22,6 +25,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  background-color: $color-white;
+  border-color: $color-darkWhite;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.43);
+  color: $color-blueDark;
+  animation-name: box;
+  animation-duration: 2s;
+  margin-bottom: 20px;
+  width: 250px;
+  margin: 0 auto 20px;
 }
 
 .show__image-fake {
@@ -34,5 +46,21 @@
   width: 200px;
   background-repeat: no-repeat;
   background-size: contain;
-  // margin: 0 auto;
+}
+
+@keyframes box {
+  0% {
+    height: 0px;
+    width: 0%;
+  }
+  10% {
+    height: 0px;
+    width: 250px;
+  }
+  40% {
+    height: 425px;
+  }
+  100% {
+    height: 425px;
+  }
 }
