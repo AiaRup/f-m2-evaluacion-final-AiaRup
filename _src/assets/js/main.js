@@ -125,6 +125,7 @@ const searchSeries = url => {
       .then(response => response.json())
       .then(data => {
         // console.log(data);
+        seriesList.innerHTML = '';
         for (const show of data) {
           showSeries(show);
         }
@@ -134,6 +135,7 @@ const searchSeries = url => {
 
 // function to paint favorities on page
 const paintFavorities = listShows => {
+  favoritiesList.innerHTML = '';
   for (const show of listShows) {
     const { id, image, name } = show;
     const showContainer = document.createElement('li');
@@ -150,20 +152,38 @@ const paintFavorities = listShows => {
     nameShow.classList.add('favorite__title');
     const showTitle = document.createTextNode(name);
     nameShow.appendChild(showTitle);
+
+    const deleteIcon = document.createElement('div');
+    deleteIcon.classList.add('favorite__delete-icon');
+    const iconText = document.createTextNode('x');
+    deleteIcon.appendChild(iconText);
+
+    deleteIcon.addEventListener('click', () => {
+      deleteFavorite(id);
+    });
+
     showContainer.appendChild(nameShow);
     showContainer.appendChild(imageShow);
+    showContainer.appendChild(deleteIcon);
     favoritiesList.appendChild(showContainer);
   }
 };
 
 //function for the delete event of favorite
-const deleteFavorite = show => {
+const deleteFavorite = showId => {
   // delete from local array
+  const indexOfShow = favoriteSeries.findIndex(
+    item => item.id === parseInt(showId)
+  );
+  console.log('index', indexOfShow);
+  favoriteSeries.splice(indexOfShow, 1);
 
   // delete from page
+  paintFavorities(favoriteSeries);
 
   // delete from local storage
   removeStorageData('favoriteShows');
+  saveStorageData(favoriteSeries);
 };
 
 // function to take favorites as the page loads

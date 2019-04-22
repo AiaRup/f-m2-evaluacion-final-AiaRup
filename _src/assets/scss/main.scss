@@ -26,3 +26,22 @@ body {
   overflow: hidden;
   display: inline-block;
 }
+
+.favorite__image {
+  height: 150px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.favorite__delete-icon {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
