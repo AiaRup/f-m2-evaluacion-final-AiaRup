@@ -11,8 +11,10 @@ const takeUserInput = () => {
   // check if value is empty
   if (!value.text) {
     value.status = false;
+    errorContainer.classList.remove('hidden');
   } else {
     // SHOW MESSAGE
+    errorContainer.classList.add('hidden');
   }
   return value;
 };
