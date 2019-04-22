@@ -14,7 +14,6 @@ const takeUserInput = () => {
     value.status = false;
     errorContainer.classList.remove('hidden');
   } else {
-    // SHOW MESSAGE
     errorContainer.classList.add('hidden');
   }
   return value;
@@ -27,7 +26,6 @@ const checkImage = img => {
 
 // function to paint shows on the page
 const showSeries = ({ show }) => {
-  // console.log(show);
   let { image, name, id } = show;
   // check if image exists
   image = checkImage(image);
@@ -37,7 +35,8 @@ const showSeries = ({ show }) => {
   showContainer.setAttribute('data-id', id);
 
   // check if the show is already on the favorites list
-  const indexOfShow = favoriteSeries.findIndex(item => item.id === id);
+  const indexOfShow = findInArray(favoriteSeries, id);
+  // const indexOfShow = favoriteSeries.findIndex(item => item.id === id);
 
   if (indexOfShow !== -1) {
     showContainer.classList.add('favorite');
@@ -66,8 +65,8 @@ const showSeries = ({ show }) => {
   });
 
   // add each object to the results array
-  seriesResults.push(showObj);
-  console.log('results', seriesResults);
+  // seriesResults.push(showObj);
+  // console.log('results', seriesResults);
 
   seriesList.appendChild(showContainer);
 };
@@ -80,7 +79,7 @@ function searchSeries(url) {
     fetch(`${url}${userValue.text}`)
       .then(response => response.json())
       .then(data => {
-        seriesResults = [];
+        // seriesResults = [];
         seriesList.innerHTML = '';
         for (const show of data) {
           showSeries(show);
