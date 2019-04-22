@@ -14,10 +14,12 @@ let favoriteSeries = [];
 
 // function to add or remove show from array
 const changeSeriesArray = (show, id) => {
-  const filteredArray = favoriteSeries.filter(show => show.id === parseInt(id));
+  const indexOfShow = favoriteSeries.findIndex(
+    show => show.id === parseInt(id)
+  );
 
-  if (filteredArray.length) {
-    favoriteSeries.splice(favoriteSeries.indexOf(filteredArray), 1);
+  if (indexOfShow !== -1) {
+    favoriteSeries.splice(indexOfShow, 1);
   } else {
     favoriteSeries.push(show);
   }

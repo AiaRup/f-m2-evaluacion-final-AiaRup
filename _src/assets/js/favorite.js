@@ -24,10 +24,8 @@ function paintFavorities(listShows) {
     const showTitle = document.createTextNode(name);
     nameShow.appendChild(showTitle);
 
-    const deleteIcon = document.createElement('div');
-    deleteIcon.classList.add('favorite__delete-icon');
-    const iconText = document.createTextNode('x');
-    deleteIcon.appendChild(iconText);
+    const deleteIcon = document.createElement('i');
+    deleteIcon.classList.add('fas', 'fa-times-circle', 'delete-icon');
 
     deleteIcon.addEventListener('click', () => {
       deleteFavorite(id);

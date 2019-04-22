@@ -13,19 +13,11 @@
   background-size: contain;
 }
 
-.favorite__delete-icon {
-  height: 20px;
-  width: 20px;
-  border-radius: 10px;
-  background-color: $color-white;
-  color: $color-darkGrey;
-  text-align: center;
-  line-height: 20px;
-  font-weight: bold;
+.delete-icon {
   cursor: pointer;
   margin-left: 10px;
   &:hover {
-    background-color: $color-red;
+    color: $color-red;
   }
 }
 
