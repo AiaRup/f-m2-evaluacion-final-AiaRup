@@ -35,6 +35,12 @@ const showSeries = ({ show }) => {
   showContainer.classList.add('show');
   showContainer.setAttribute('data-id', id);
 
+  // check if the show is already on the favorites list
+  const indexOfShow = favoriteSeries.findIndex(item => item.id === id);
+  if (!indexOfShow) {
+    showContainer.classList.add('favorite');
+  }
+
   const imageShow = document.createElement('div');
   const fakeImage = document.createElement('img');
   imageShow.classList.add('show__image');
@@ -53,8 +59,8 @@ const showSeries = ({ show }) => {
 
   // create show object
   const showObj = showObject(name, image, id);
-  showContainer.addEventListener('click', e => {
-    showOnClick(e, showObj);
+  showContainer.addEventListener('click', event => {
+    showOnClick(event, showObj);
   });
 
   seriesList.appendChild(showContainer);
