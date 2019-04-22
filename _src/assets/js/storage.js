@@ -1,3 +1,5 @@
+'use strict';
+
 // function to save in local storage
 function saveStorageData(array) {
   localStorage.setItem('favoriteShows', JSON.stringify(array));

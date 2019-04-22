@@ -1,3 +1,5 @@
+'use strict';
+
 // function for the show event listener on click
 function showOnClick(event, show) {
   const { currentTarget: listItem } = event;

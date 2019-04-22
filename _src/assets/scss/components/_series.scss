@@ -1,0 +1,11 @@
+.show__image-fake {
+  height: 0;
+  width: 0;
+}
+
+.show__image {
+  height: 300px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

@@ -1,3 +1,5 @@
+'use strict';
+
 // function to paint favorities on page
 function paintFavorities(listShows) {
   favoritiesList.innerHTML = '';
@@ -13,7 +15,7 @@ function paintFavorities(listShows) {
     fakeImage.setAttribute('src', image);
     fakeImage.classList.add('favorite__image-fake');
     imageShow.setAttribute('style', `background-image:url('${image}')`);
-    const nameShow = document.createElement('h2');
+    const nameShow = document.createElement('h4');
     nameShow.classList.add('favorite__title');
     const showTitle = document.createTextNode(name);
     nameShow.appendChild(showTitle);
@@ -27,8 +29,8 @@ function paintFavorities(listShows) {
       deleteFavorite(id);
     });
 
-    showContainer.appendChild(nameShow);
     showContainer.appendChild(imageShow);
+    showContainer.appendChild(nameShow);
     showContainer.appendChild(deleteIcon);
     favoritiesList.appendChild(showContainer);
   }

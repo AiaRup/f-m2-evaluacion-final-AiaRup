@@ -1,3 +1,4 @@
+'use strict';
 const apiUrl = 'http://api.tvmaze.com/search/shows?q=';
 const defaultImage =
   'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
@@ -52,13 +53,13 @@ const showSeries = ({ show }) => {
   fakeImage.classList.add('show__image-fake');
   imageShow.setAttribute('style', `background-image:url('${image}')`);
 
-  const nameShow = document.createElement('h2');
+  const nameShow = document.createElement('h3');
   nameShow.classList.add('show__title');
   const showTitle = document.createTextNode(name);
   nameShow.appendChild(showTitle);
 
-  showContainer.appendChild(nameShow);
   showContainer.appendChild(imageShow);
+  showContainer.appendChild(nameShow);
 
   // create show object
   const showObj = showObject(name, image, id);
@@ -77,7 +78,7 @@ function searchSeries(url) {
     fetch(`${url}${userValue.text}`)
       .then(response => response.json())
       .then(data => {
-        // console.log(data);
+        console.log(data);
         seriesList.innerHTML = '';
         for (const show of data) {
           showSeries(show);
