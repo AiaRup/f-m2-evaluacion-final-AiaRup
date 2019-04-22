@@ -37,7 +37,10 @@ const showSeries = ({ show }) => {
 
   // check if the show is already on the favorites list
   const indexOfShow = favoriteSeries.findIndex(item => item.id === id);
-  if (!indexOfShow) {
+  console.log('index of show', indexOfShow);
+  console.log('id', id);
+
+  if (indexOfShow !== -1) {
     showContainer.classList.add('favorite');
   }
 
