@@ -40,8 +40,8 @@ const getStorageData = text => {
 };
 
 // function to take data from local storage
-const removeStorageData = () => {
-  localStorage.removeItem('favoriteShows');
+const removeStorageData = item => {
+  localStorage.removeItem(item);
 };
 
 // function to check if show's image is available
@@ -112,7 +112,6 @@ const searchSeries = url => {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-
         for (const show of data) {
           showSeries(show);
         }
@@ -123,6 +122,16 @@ const searchSeries = url => {
 // function to paint favorities on page
 const paintFavorities = listShows => {
   console.log('favorities', listShows);
+};
+
+//function for the delete event of favorite
+const deleteFavorite = show => {
+  // delete from local array
+
+  // delete from page
+
+  // delete from local storage
+  removeStorageData('favoriteShows');
 };
 
 // function to take favorites as the page loads
