@@ -16,6 +16,9 @@ function deleteFavorite(showId) {
   favoriteSeries.splice(indexOfShow, 1);
   // delete from page
   paintFavorities(favoriteSeries);
+  // update counter
+  counterFav--;
+  counterElement.innerHTML = counterFav;
 
   // change class favorite if exist in search container
   const pageSeriesResults = document.querySelectorAll('.favorite');
@@ -30,11 +33,15 @@ function deleteFavorite(showId) {
 }
 
 // function to delete all favorites
-const deleteAllFav = array => {
-  array = [];
+const deleteAllFav = arr => {
+  arr.length = 0;
   removeStorageData('favoriteShows');
   favoritiesList.innerHTML = '';
+  // update list of result and change class if needed
+
   // update count of favorites
+  counterFav = 0;
+  counterElement.innerHTML = counterFav;
 };
 
 const fetchOnEnter = event => {

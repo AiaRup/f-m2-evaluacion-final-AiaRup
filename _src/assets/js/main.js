@@ -7,10 +7,11 @@ const seriesList = document.querySelector('.series');
 const favoritiesList = document.querySelector('.series__favorities');
 const errorContainer = document.querySelector('.error');
 const deleteAllButton = document.querySelector('.button__delete-all');
+const counterElement = document.querySelector('.counter');
 
 // Variables to work with
 let favoriteSeries = [];
-// let seriesResults = [];
+let counterFav = 0;
 
 /** Helper Functions **/
 
@@ -27,8 +28,12 @@ const changeSeriesArray = (show, id) => {
 
   if (indexOfShow !== -1) {
     favoriteSeries.splice(indexOfShow, 1);
+    counterFav--;
+    counterElement.innerHTML = counterFav;
   } else {
     favoriteSeries.push(show);
+    counterFav++;
+    counterElement.innerHTML = counterFav;
   }
   saveStorageData(favoriteSeries);
   paintFavorities(favoriteSeries);

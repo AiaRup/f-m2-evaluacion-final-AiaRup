@@ -47,6 +47,12 @@ const loadFavorites = () => {
   if (favorites) {
     favoriteSeries = favorites;
     paintFavorities(favorites);
+    // update counter of favorites
+    counterFav = favoriteSeries.length;
+    counterElement.innerHTML = counterFav;
+  } else {
+    counterFav = 0;
+    counterElement.innerHTML = counterFav;
   }
 };
 

@@ -39,3 +39,15 @@
 .favorite__title {
   color: $color-pink;
 }
+
+.counter {
+  background-color: $color-pink;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  color: $color-white;
+  font-size: 12px;
+  margin-left: 20px;
+  display: inline-block;
+  line-height: 20px;
+}

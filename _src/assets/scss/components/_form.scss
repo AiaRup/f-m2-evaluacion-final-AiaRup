@@ -21,6 +21,9 @@
 .main__left-panel {
   .main__subtitle {
     margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
