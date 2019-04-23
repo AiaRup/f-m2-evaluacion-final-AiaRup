@@ -12,6 +12,7 @@ const takeUserInput = () => {
   // check if value is empty, and show a message if needed
   if (!value.text) {
     value.status = false;
+    errorContainer.innerHTML = '* You need to enter a value to search';
     errorContainer.classList.remove('hidden');
   } else {
     errorContainer.classList.add('hidden');
@@ -79,9 +80,17 @@ function searchSeries(url) {
     fetch(`${url}${userValue.text}`)
       .then(response => response.json())
       .then(data => {
-        seriesList.innerHTML = '';
-        for (const show of data) {
-          showSeries(show);
+        // if data is an empty array or full
+        if (data.length) {
+          seriesList.innerHTML = '';
+          for (const show of data) {
+            showSeries(show);
+          }
+        } else {
+          errorContainer.innerHTML = `We Can't seem to find any series that match your search fo "${
+            userValue.text
+          }".`;
+          errorContainer.classList.remove('hidden');
         }
       })
       .catch(error => console.log('error', error));
