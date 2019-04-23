@@ -50,9 +50,15 @@ const loadFavorites = () => {
     // update counter of favorites
     counterFav = favoriteSeries.length;
     counterElement.innerHTML = counterFav;
+    // hide button to delete all if counter is 0
+    if (!counterFav) {
+      deleteAllButton.classList.add('hidden');
+    }
   } else {
     counterFav = 0;
     counterElement.innerHTML = counterFav;
+    // hide button to delete all
+    deleteAllButton.classList.add('hidden');
   }
 };
 

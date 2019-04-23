@@ -25,11 +25,16 @@ function deleteFavorite(showId) {
   counterFav--;
   counterElement.innerHTML = counterFav;
 
+  // hide button to delete all if counter is 0
+  if (!counterFav) {
+    deleteAllButton.classList.add('hidden');
+  }
+
   // remove class favorite if exist in search container
   const pageSeriesResults = document.querySelectorAll('.favorite');
   for (const listItem of pageSeriesResults) {
-    const heartIcon = listItem.querySelector('.heart-icon');
     if (parseInt(listItem.dataset.id) === showId) {
+      const heartIcon = listItem.querySelector('.heart-icon');
       listItem.classList.remove('favorite');
       heartIcon.classList.remove('fa-heart');
       heartIcon.classList.add('fa-heart-broken');
@@ -49,12 +54,17 @@ const deleteAllFav = arr => {
   const pageSeriesResults = document.querySelectorAll('.favorite');
   for (const listItem of pageSeriesResults) {
     if (listItem.classList.contains('favorite')) {
+      const heartIcon = listItem.querySelector('.heart-icon');
       listItem.classList.remove('favorite');
+      heartIcon.classList.remove('fa-heart');
+      heartIcon.classList.add('fa-heart-broken');
     }
   }
   // update count of favorites
   counterFav = 0;
   counterElement.innerHTML = counterFav;
+  // hide button to delete all
+  deleteAllButton.classList.add('hidden');
 };
 
 const fetchOnEnter = event => {

@@ -52,8 +52,13 @@
   cursor: pointer;
   font-weight: bold;
   color: $color-blueDark;
-  background: linear-gradient($color-red, $color-pink);
-  border: none;
+  background: $color-pink;
+  border: 2px solid $color-pink;
   text-transform: capitalize;
   border-radius: 5px;
+  margin-top: 20px;
+  &:hover {
+    color: $color-pink;
+    background: $color-blueDark;
+  }
 }

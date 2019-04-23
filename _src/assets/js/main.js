@@ -30,6 +30,7 @@ const changeSeriesArray = (show, id) => {
     counterFav++;
     counterElement.innerHTML = counterFav;
   }
+
   saveStorageData(favoriteSeries);
   paintFavorities(favoriteSeries);
 };
