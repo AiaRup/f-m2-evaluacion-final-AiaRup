@@ -12,7 +12,6 @@ function showOnClick(event, show) {
 //function for the delete event of favorite
 function deleteFavorite(showId) {
   // delete from local array
-
   const indexOfShow = findInArray(favoriteSeries, showId);
   favoriteSeries.splice(indexOfShow, 1);
   // delete from page
@@ -30,6 +29,14 @@ function deleteFavorite(showId) {
   saveStorageData(favoriteSeries);
 }
 
+// function to delete all favorites
+const deleteAllFav = array => {
+  array = [];
+  removeStorageData('favoriteShows');
+  favoritiesList.innerHTML = '';
+  // update count of favorites
+};
+
 const fetchOnEnter = event => {
   if (event.keyCode === 13) {
     searchSeries(apiUrl);
@@ -37,3 +44,6 @@ const fetchOnEnter = event => {
 };
 
 window.addEventListener('keyup', fetchOnEnter);
+deleteAllButton.addEventListener('click', () => {
+  deleteAllFav(favoriteSeries);
+});

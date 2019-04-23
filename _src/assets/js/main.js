@@ -6,6 +6,7 @@ const searchInput = document.querySelector('.form__input');
 const seriesList = document.querySelector('.series');
 const favoritiesList = document.querySelector('.series__favorities');
 const errorContainer = document.querySelector('.error');
+const deleteAllButton = document.querySelector('.button__delete-all');
 
 // Variables to work with
 let favoriteSeries = [];
