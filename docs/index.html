@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
         crossorigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css?family=Courgette|Montserrat"
+        <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Montserrat"
         rel="stylesheet" />
         <link rel="stylesheet" href="assets/css/main.css" />
     </head>
@@ -19,13 +19,13 @@
     <body>
         <div class="page">
             <header class="page__header">
-                 <h1 class="header__title">
-    Buscador de series<i class="fas fa-film tv-icon"></i>
-  </h1>
+                 <h1 class="header__title">TiViFav<i class="fas fa-film tv-icon"></i></h1>
+
+                 <h2 class="header__subtitle">Buscador de series</h2>
 
             </header>
             <main class="page__main">
-                <div class="main__left-panel">
+                <section class="main__left-panel">
                     <div class="main__form">
                         <div class="form__container">
                             <label for="search" class="form__label">Buscador de series</label>
@@ -33,7 +33,7 @@
                             />
                             <button type="button" class="form__button">buscar</button>
                         </div>
-                        <div class="error hidden">* You need to enter a value to search</div>
+                        <div class="error hidden"></div>
                     </div>
                      <h2 class="main__subtitle">
       Mis series favoritas<i class="fas fa-chevron-up collapse-icon"></i
@@ -44,12 +44,12 @@
                         <ol class="series__favorities"></ol>
                         <button class="button__delete-all hidden"> <i class="far fa-trash-alt"></i> Borrar todo</button>
                     </div>
-                </div>
-                <div class="main__right-panel">
+                </section>
+                <section class="main__right-panel">
                      <h2 class="main__subtitle">Mi búsqueda</h2>
 
                     <ol class="series"></ol>
-                </div>
+                </section>
             </main>
         </div>
         <script type="text/javascript" src="assets/js/main.js"></script>
