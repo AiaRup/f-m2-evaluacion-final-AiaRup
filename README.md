@@ -1,6 +1,4 @@
-![icon](_src/assets/tv-icon.png)
-
-#TiViFav
+# TiViFav
 
 ## f-m2-evaluacion-final - Aia Rupsom
 
