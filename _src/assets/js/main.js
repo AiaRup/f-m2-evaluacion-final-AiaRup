@@ -31,6 +31,12 @@ const changeSeriesArray = (show, id) => {
     counterElement.innerHTML = counterFav;
   }
 
+  if (!favoriteSeries.length) {
+    deleteAllButton.classList.add('hidden');
+  } else {
+    deleteAllButton.classList.remove('hidden');
+  }
+
   saveStorageData(favoriteSeries);
   paintFavorities(favoriteSeries);
 };
