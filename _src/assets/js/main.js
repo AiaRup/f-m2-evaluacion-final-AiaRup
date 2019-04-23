@@ -14,7 +14,6 @@ let favoriteSeries = [];
 let counterFav = 0;
 
 /** Helper Functions **/
-
 const findInArray = (array, element) => {
   return array.findIndex(item => item.id === parseInt(element));
 };
@@ -22,10 +21,6 @@ const findInArray = (array, element) => {
 // function to add or remove show from array
 const changeSeriesArray = (show, id) => {
   const indexOfShow = findInArray(favoriteSeries, id);
-  // const indexOfShow = favoriteSeries.findIndex(
-  //   show => show.id === parseInt(id)
-  // );
-
   if (indexOfShow !== -1) {
     favoriteSeries.splice(indexOfShow, 1);
     counterFav--;
@@ -40,7 +35,7 @@ const changeSeriesArray = (show, id) => {
 };
 
 // function to create object with properties of show
-const showObject = (name, image, id) => {
+const createShowObject = (name, image, id) => {
   return {
     name,
     image,

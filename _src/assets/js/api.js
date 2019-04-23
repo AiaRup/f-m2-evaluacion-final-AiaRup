@@ -9,7 +9,7 @@ const takeUserInput = () => {
     text: searchInput.value,
     status: true,
   };
-  // check if value is empty
+  // check if value is empty, and show a message if needed
   if (!value.text) {
     value.status = false;
     errorContainer.classList.remove('hidden');
@@ -34,12 +34,15 @@ const showSeries = ({ show }) => {
   showContainer.classList.add('show');
   showContainer.setAttribute('data-id', id);
 
-  // check if the show is already on the favorites list
-  const indexOfShow = findInArray(favoriteSeries, id);
-  // const indexOfShow = favoriteSeries.findIndex(item => item.id === id);
+  const heartIcon = document.createElement('i');
+  heartIcon.classList.add('fas', 'fa-heart-broken', 'heart-icon');
 
+  // check if the show is already on the favorites list, if it does add the class favorite
+  const indexOfShow = findInArray(favoriteSeries, id);
   if (indexOfShow !== -1) {
     showContainer.classList.add('favorite');
+    heartIcon.classList.add('fa-heart');
+    heartIcon.classList.remove('fa-heart-broken');
   }
 
   const imageShow = document.createElement('div');
@@ -55,18 +58,15 @@ const showSeries = ({ show }) => {
   const showTitle = document.createTextNode(name);
   nameShow.appendChild(showTitle);
 
+  showContainer.appendChild(heartIcon);
   showContainer.appendChild(imageShow);
   showContainer.appendChild(nameShow);
 
-  // create show object
-  const showObj = showObject(name, image, id);
+  // create a show object and add eventListener on click of one li
+  const showObj = createShowObject(name, image, id);
   showContainer.addEventListener('click', event => {
-    showOnClick(event, showObj);
+    onShowClick(event, showObj);
   });
-
-  // add each object to the results array
-  // seriesResults.push(showObj);
-  // console.log('results', seriesResults);
 
   seriesList.appendChild(showContainer);
 };
@@ -79,7 +79,6 @@ function searchSeries(url) {
     fetch(`${url}${userValue.text}`)
       .then(response => response.json())
       .then(data => {
-        // seriesResults = [];
         seriesList.innerHTML = '';
         for (const show of data) {
           showSeries(show);
