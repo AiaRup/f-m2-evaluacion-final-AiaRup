@@ -1,12 +1,35 @@
 .main__subtitle {
-  @media all and (max-width: 768px) {
-    margin-top: 30px;
+  @media all and (max-width: 740px) {
+    margin-top: 40px;
   }
 }
 
 .page__main {
-  @media all and (min-width: 768px) {
+  max-width: 300px;
+  margin: 0 auto;
+  @media all and (min-width: 740px) {
+    max-width: 740px;
     display: grid;
     grid-template-columns: 300px auto;
+    margin: 0;
+  }
+}
+
+.main__right-panel {
+  .main__subtitle {
+    @media all and (min-width: 740px) {
+      margin-top: 0;
+    }
+  }
+}
+
+.main__left-panel {
+  .main__subtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media all and (min-width: 740px) {
+      margin-top: 80px;
+    }
   }
 }

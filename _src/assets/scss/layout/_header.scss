@@ -11,5 +11,7 @@
 }
 
 .header__subtitle {
-  text-align: left;
+  @media all and (min-width: 740px) {
+    text-align: left;
+  }
 }

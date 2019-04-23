@@ -1,7 +1,7 @@
 .series {
   @include listDefault;
   margin: 0 auto;
-  @media all and (min-width: 740px) {
+  @media all and (min-width: 970px) {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(2, 250px);
