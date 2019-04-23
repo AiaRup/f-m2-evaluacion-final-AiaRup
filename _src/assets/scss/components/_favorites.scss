@@ -33,13 +33,14 @@
 }
 
 .animate__fadeIn {
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-fill-mode: both;
   animation-name: fadeIn;
 }
 
 .favorite__title {
   color: $color-pink;
+  text-align: left;
 }
 
 .counter {

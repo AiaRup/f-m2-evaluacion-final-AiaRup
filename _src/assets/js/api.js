@@ -1,7 +1,7 @@
 'use strict';
 const apiUrl = 'http://api.tvmaze.com/search/shows?q=';
 const defaultImage =
-  'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
+  'https://via.placeholder.com/200x300/20313b/ffffff/?text=TV';
 
 // function to take user input from input
 const takeUserInput = () => {
