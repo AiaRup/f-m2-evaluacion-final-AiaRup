@@ -1,52 +1,51 @@
-![Adalab](_src/assets/images/logo-adalab-80px.png)
-# Adalab web starter kit
-Ahoy! Esta es nuestro Starter Kit en node/gulp para este primer contacto con el desarrollo web
-Incluye SCSS, un sistema de plantillas HTMl y un web server.
+![icon](_src/assets/tv-icon.png)
 
-## Guía de inicio rápido
-Necesitarás instalar [Node.js](https://nodejs.org/) y [Gulp](https://gulpjs.com) para trabajar con este Starter Kit, luego:
-1. Descarga o clona el repositorio
-2. Instala las dependencias locales con `$ npm install`
-3. Arranca el kit con `$ gulp`
+#TiViFav
 
-## Espera, ¿esto se hace siempre?
-> ### Solo una vez al principio en cada ordenador que utilicemos:
-- Instalamos node
-- Instalamos el comando de gulp de forma global para poder usarlo desde cualquier carpeta usando `npm install --global gulp-cli`
+## f-m2-evaluacion-final - Aia Rupsom
 
-> ### Cada vez que descarguemos o clonemos un repo:
-- `npm install` para instalar los paquetes necesarios para convertir Sass a CSS, minizarlo, etc.
+This is a website that I prepared in the final exam on module 2, as part of the ADALAB course for training Front-End developers. On the site you can search for series taken from this [API](http://www.tvmaze.com) and you can save favorite series in your personal area.
 
-> ### Cada vez que estemos trabajando con nuestro código:
-- Desde nuestra terminal, ejecutamos el comando `gulp` para que realice la tarea por defecto, que en el caso del `gulpfile.js` que tenemos en adalab-web-starter-kit estará pendiente de nuestros archivos Sass, html y JavaScript y los compilará, minificará y/o recargará el servidor cada vez que hagamos un cambio
+## Quick Start Guide
 
-## Tareas de gulp incluidas
-### Inicio de un web server para desarrollo
+You will need to install [Node.js](https://nodejs.org/) and [Gulp](https://gulpjs.com) to work with this Repo, then:
+
+1. Download or clone the repository.
+2. Install local dependencies with `$ npm install`.
+3. Start the web server with `$ gulp` to see the website and make changes as you wish.
+
+## Gulp tasks included in this project
+
+### Start a web server for development
+
 ```
 $ gulp
 ```
-Lanza un webserver con BrowserSync y varios watchers estarán pendientes de los archivos SCSS/JS/HTML, en la carpeta **public/**, para recargar el navegador cuando se necesite.
 
-### Versión lista para subir a producción
+This task will launch a webserver with BrowserSync and several watchers will be watching the files SCSS / JS / HTML, in the folder **public/**, to reload the browser when needed.
+
+### Final version to upload to production
+
 ```
 $ gulp docs
 ```
-En la carpeta **docs/** genera los CSS y JS minimizados y sin sourcemaps listos para subir al repo y activar GitHub Pages en `master/docs`.
 
+This task will create a folder **docs/**, generates the CSS and JS minimized and without sourcemaps, ready to upload to the repo. Then you need to activate GitHub Pages in `master/docs`, and you could see your website in the URL provided.
 
-## Estructura del proyecto
-Nuestro **gulpfile.js** usa un JSON de configuración con las rutas de los archivos a generar/vigilar.
+## Structure of the project
 
-La estructura de carpetas tiene esta pinta:
+The folder structure looks like this:
+
 ```
 /
 `- _src
    |- assets
    |  |- icons
-   |  |- images
    |  |- js
    |  `- scss
+   |     `- components
    |     `- core
+   |     `- layout
    |
    `- templates
       `- partials
@@ -54,19 +53,19 @@ La estructura de carpetas tiene esta pinta:
 ```
 
 ## HTML
-Viene incluído el paquete [**gulp-html-partial**](https://www.npmjs.com/package/gulp-html-partial) que nos va a permitir tener un sistema de plantillas html
 
-## Imágenes e iconos
-Tenemos en **_src/** una carpeta para las imágenes del proyecto y una para los iconos como el favicon o los iconos de dispositivos móviles. Estos últimos se generan en la raíz de las carpetas **public/** y **docs/**
+It includes the package [**gulp-html-partial**](https://www.npmjs.com/package/gulp-html-partial) that will allow you to have an html templates/partials system.
+
+## Images and Icons
+
+You have in **\_src/** a folder for the images of the project and one for the icons like the favicon or the icons of mobile devices. The latter are generated in the root of the folders **public/** and **docs/**.
 
 ## CSS
-Viene incluído el paquete [**gulp-combine-mq**](https://www.npmjs.com/package/gulp-combine-mq) que agrupa todas las mediaqueries al final del documento css.
 
-## JS
-Podemos usar parciales de JS: en el JSON de configuración, **config.json** especificamos los archivos JS que utilizamos y en el orden que deben procesarse.
+In the project I used the package [**gulp-combine-mq**](https://www.npmjs.com/package/gulp-combine-mq) that groups all the mediaqueries at the end of the css document.
 
-## ¿Cómo actualizo si tengo una versión anterior?
-En principio puedes descargar todos los archivos fuera de **_src/** y sustituir los de tu proyecto. Además deberías replicar la estructura de carpetas dentro de **_src/**.
+## Something is missing?
 
-## Falta algo?
-Echas de menos que el kit haga algo en concreto? Pidelo sin problema a través de los Issues o si te animas a mejorarlo mándanos un PR :)
+If you want to contribute to the project, change something that is not working properly or, you would like to offer a new feature, you can open a new issue.
+
+Thank you for your interest in my project 🤗.

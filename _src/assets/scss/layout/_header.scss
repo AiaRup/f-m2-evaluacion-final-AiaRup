@@ -1,6 +1,6 @@
 .header__title {
   color: $color-white;
-  text-transform: uppercase;
+  font-family: $font-cinzel;
 }
 
 .tv-icon {
@@ -8,4 +8,8 @@
   margin-left: 50px;
   font-size: 50px;
   transform: rotate(30deg);
+}
+
+.header__subtitle {
+  text-align: left;
 }
