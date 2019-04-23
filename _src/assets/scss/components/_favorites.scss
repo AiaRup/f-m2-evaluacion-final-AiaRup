@@ -62,3 +62,12 @@
     background: $color-blueDark;
   }
 }
+
+.favorite__show {
+  .favorities__container {
+    display: none;
+  }
+  .collapse-icon {
+    transform: rotate(180deg);
+  }
+}

@@ -27,6 +27,10 @@
   }
 }
 
+.collapse-icon {
+  cursor: pointer;
+}
+
 .form__button {
   color: $color-white;
   padding: 9px 12px;
@@ -55,9 +59,4 @@
 
 .form__container {
   @include flexLayout;
-}
-
-input:-webkit-autofill {
-  background-color: $color-blueDark !important;
-  color: $color-white !important;
 }

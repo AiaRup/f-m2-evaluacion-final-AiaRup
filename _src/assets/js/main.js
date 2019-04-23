@@ -8,6 +8,8 @@ const favoritiesList = document.querySelector('.series__favorities');
 const errorContainer = document.querySelector('.error');
 const deleteAllButton = document.querySelector('.button__delete-all');
 const counterElement = document.querySelector('.counter');
+const collapseIcon = document.querySelector('.collapse-icon');
+const leftPanelElement = document.querySelector('.main__left-panel');
 
 // Variables to work with
 let favoriteSeries = [];

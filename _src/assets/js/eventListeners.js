@@ -67,6 +67,11 @@ const deleteAllFav = arr => {
   deleteAllButton.classList.add('hidden');
 };
 
+// function for collapse favorites
+const onCollapseClick = () => {
+  leftPanelElement.classList.toggle('favorite__show');
+};
+
 const fetchOnEnter = event => {
   if (event.keyCode === 13) {
     searchSeries(apiUrl);
@@ -74,6 +79,9 @@ const fetchOnEnter = event => {
 };
 
 window.addEventListener('keyup', fetchOnEnter);
+
 deleteAllButton.addEventListener('click', () => {
   deleteAllFav(favoriteSeries);
 });
+
+collapseIcon.addEventListener('click', onCollapseClick);
