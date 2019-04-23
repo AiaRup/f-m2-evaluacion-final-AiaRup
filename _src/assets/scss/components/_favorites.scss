@@ -32,6 +32,12 @@
   grid-gap: 10px;
 }
 
+.animate__fadeIn {
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+}
+
 .favorite__title {
   color: $color-pink;
 }
@@ -69,5 +75,14 @@
   }
   .collapse-icon {
     transform: rotate(180deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

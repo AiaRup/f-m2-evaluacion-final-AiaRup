@@ -6,7 +6,7 @@ function paintFavorities(listShows) {
   for (const show of listShows) {
     const { id, image, name } = show;
     const showContainer = document.createElement('li');
-    showContainer.classList.add('show__favorite');
+    showContainer.classList.add('show__favorite', 'animate__fadeIn');
     showContainer.setAttribute('data-id', id);
     const imageShow = document.createElement('div');
     const fakeImage = document.createElement('img');
